@@ -3,21 +3,18 @@ import "./App.css";
 import BarChart from "./components/BarChart";
 import LineChart from "./components/LineChart";
 import PieChart from "./components/PieChart";
-import { UserData } from "./Data";
+import { UserData } from "./WFdata";
 
 function App() {
   const [userData, setUserData] = useState({
-    labels: UserData.map((data) => data.year),
+    labels: UserData.map((data) => data.name),
     datasets: [
       {
-        label: "Users Gained",
-        data: UserData.map((data) => data.userGain),
+        label: "Monitor",
+        data: UserData.map((data) => data.enabled),
         backgroundColor: [
-          "rgba(75,192,192,1)",
-          "#ecf0f1",
-          "#50AF95",
-          "#f3ba2f",
-          "#2a71d0",
+          "green",
+      
         ],
         borderColor: "black",
         borderWidth: 2,
@@ -26,6 +23,7 @@ function App() {
     ],
   });
 
+  
 
 
 
